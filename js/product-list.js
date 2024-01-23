@@ -20,6 +20,16 @@ export class ProductList {
       }
    }
 
+   async getProductById(id) {
+      const products = await this.getProducts();
+      return products.find(product => product.id === id);
+   }
+
+   async showToConsole() {
+      console.log(getProductById('1'));
+   }
+
+
    async renderProducts() {
       try {
          let productListDomString = '';
@@ -28,6 +38,7 @@ export class ProductList {
             productListDomString += this.createProductDomString(product);
          });
          this.container.innerHTML = productListDomString;
+         this.addEventListeners();
       } catch (error) {
          console.error('Error rendering products:', error);
       }
@@ -36,15 +47,55 @@ export class ProductList {
    createProductDomString(product) {
       return `<article class="product__list-product product">
                 <div class="product__info">
-                  <a class="product__info-link" href="#" data-bs-toggle="modal" data-bs-target="#product-info-modal" data-id=${product.id}>
+                  
                   <img src="img/${product.image}" class="product__img" alt="${product.title}">
                     <h5 class="product-title">${product.title}</h5>
                     <p class="product-description">${product.description}</p>
                     <p class="product-price" data-id=${product.id}>$${product.price}</p>
-                  </a>
+                  <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#product-info-modal" data-id=${product.id}>Info</a>
                 </div>
               </article>`;
    }
+
+   addEventListeners() {
+      document.querySelectorAll('.btn-info').forEach(btn => {
+         btn.addEventListener('click', this.showProductInfo.bind(this));
+      });
+      // document.querySelectorAll('.btn-buy').forEach(btn => {
+      //    btn.addEventListener('click', this.addProductToCart.bind(this));
+      // });
+   }
+
+   async showProductInfo(event) {
+      const id = event.target.dataset.id;
+      const product = await this.getProductById(id);
+
+      const modalTitle = document.querySelector("#product-info-modal .modal-title");
+      const modalBody = document.querySelector("#product-info-modal .modal-body");
+      const modalFooter = document.querySelector("#product-info-modal .modal-footer");
+
+      modalTitle.innerHTML =
+         `<h5 class="modal-title" id="product-info-modalLabel">${product.title}</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
+
+      modalBody.innerHTML =
+         `<img class="product-image" src="img/${product.image}" alt="${product.description}">
+         <p class="product-description">${product.description}</p>
+         <p class="product-price">${product.price}</p>`;
+
+      modalFooter.innerHTML =
+         `<button type="button" class="btn btn-primary btn-buy">Buy</button>`;
+
+      modalFooter.querySelector('.btn-buy').dataset.id = product.id;
+   }
+
+   // addProductToCart(event) {
+   //    const id = event.target.dataset.id;
+   //    const cart = new Cart();
+   //    cart.addProduct(id);
+   //    showAlert('Added to cart!');
+   // }
 }
+
 
 new ProductList().renderProducts();
