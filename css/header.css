@@ -1,0 +1,31 @@
+.header {
+   background-color: var(--clr-light);
+   color: var(--clr-white);
+   padding-block: 0.8rem;
+}
+
+.header__logo img {
+   max-width: 18rem;
+}
+
+.header__container,
+.nav-menu,
+.nav-menu__cart {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   margin: 0;
+}
+
+.header__container {
+   justify-content: space-between;
+   margin-inline: auto;
+}
+
+.header__burger-btn {
+   display: none;
+}
+
+.nav-menu__cart-icon {
+   color: var(--clr-white);
+}

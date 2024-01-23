@@ -1,0 +1,30 @@
+[
+   {
+      "id": "1",
+      "title": "Black Concept 2 RowErg Rower - PM5",
+      "image": "rower.avif",
+      "description": "Concept 2 Rowing Machine",
+      "price": 1359.00
+   },
+   {
+      "id": "2",
+      "title": "Rogue Kettlebells",
+      "image": "ktb-16.avif",
+      "description": "Kettlebell 16 kg",
+      "price": 87.00
+   },
+   {
+      "id": "3",
+      "title": "Rogue Dumbbells",
+      "image": "db-50.jpg",
+      "description": "Hexagon Dumbell 50lbs",
+      "price": 234.00
+   },
+   {
+      "id": "4",
+      "title": "Rogue Echo Bike V3.0",
+      "image": "bike.avif",
+      "description": "Air Bike",
+      "price": 1125.00
+   }
+]
