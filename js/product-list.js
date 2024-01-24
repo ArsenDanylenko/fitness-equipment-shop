@@ -1,5 +1,5 @@
 import { Cart } from './cart.js';
-import { ProductsService } from './products-service.js';
+// import { ProductsService } from './products-service.js';
 import { showAlert } from './alert.js';
 
 export class ProductList {
@@ -56,6 +56,15 @@ export class ProductList {
               </article>`;
    }
 
+   addEventListeners() {
+      document.querySelectorAll('.btn-info').forEach(btn => {
+         btn.addEventListener('click', this.showProductInfo.bind(this));
+      });
+      document.querySelectorAll('.btn-buy').forEach(btn => {
+         btn.addEventListener('click', this.addProductToCart.bind(this));
+      });
+   }
+
    async showProductInfo(event) {
       const id = event.target.dataset.id;
       const product = await this.getProductById(id);
@@ -79,15 +88,11 @@ export class ProductList {
       modalFooter.querySelector('.btn-buy').dataset.id = product.id;
    }
 
-
-
-   addEventListeners() {
-      document.querySelectorAll('.btn-info').forEach(btn => {
-         btn.addEventListener('click', this.showProductInfo.bind(this));
-      });
-      document.querySelectorAll('.btn-buy').forEach(btn => {
-         btn.addEventListener('click', this.addProductToCart.bind(this));
-      });
+   addProductToCart(event) {
+      const id = event.target.dataset.id;
+      const cart = new Cart();
+      cart.addProduct(id);
+      showAlert('Added to cart!');
    }
 }
 
