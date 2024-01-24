@@ -1,0 +1,24 @@
+.product-list {
+   display: flex;
+   gap: 20px;
+   flex-wrap: wrap;
+}
+.product {
+   flex: 1 1 50%;
+   max-width: 23.7919rem;
+}
+@media (min-width: 480px) {
+   .product {
+      flex: 1 1 33.333%;
+   }
+}
+
+@media (min-width: 960px) {
+   .product {
+      flex: 1 1 25%;
+   }
+}
+
+.product__info .product__img {
+   object-fit: cover;
+}
