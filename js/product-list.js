@@ -5,6 +5,7 @@ import { showAlert } from './alert.js';
 export class ProductList {
    constructor() {
       this.container = document.querySelector('.product-list');
+      this.renderProducts();
    }
 
    async getProducts() {
@@ -45,13 +46,16 @@ export class ProductList {
    createProductDomString(product) {
       return `<article class="product__list-product product">
                 <div class="product__info">
-                  
-                  <img src="img/${product.image}" class="product__img" alt="${product.title}">
-                    <h5 class="product-title">${product.title}</h5>
+                <div class="product__img-container">
+                     <img src="img/${product.image}" class="product__img" alt="${product.title}">
+                </div>
+                    <h5 class="product-title pt-3 mb-0">${product.title}</h5>
                     <p class="product-description">${product.description}</p>
-                    <p class="product-price" data-id=${product.id}>$${product.price}</p>
-                  <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#product-info-modal" data-id=${product.id}>Info</a>
-                  <a href="#" class="btn btn-primary btn-buy" data-id=${product.id}>Buy</a>
+                    <p class="product-price py-1 fw-bold" data-id=${product.id}>$${product.price}</p>
+                    <div class="product-btns">
+                        <a href="#" class="btn btn-info" data-bs-toggle="modal"       data-bs-target="#product-info-modal" data-id=${product.id}>Info</a>
+                        <a href="#" class="btn btn-primary btn-buy" data-id=${product.id}>Buy</a>
+                    </div>
                 </div>
               </article>`;
    }
@@ -69,12 +73,13 @@ export class ProductList {
       const id = event.target.dataset.id;
       const product = await this.getProductById(id);
 
-      const modalTitle = document.querySelector("#product-info-modal .modal-title");
+      const modalHeader = document.querySelector("#product-info-modal .modal-header");
       const modalBody = document.querySelector("#product-info-modal .modal-body");
       const modalFooter = document.querySelector("#product-info-modal .modal-footer");
 
-      modalTitle.innerHTML =
+      modalHeader.innerHTML =
          `<h5 class="modal-title" id="product-info-modalLabel">${product.title}</h5>
+
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
 
       modalBody.innerHTML =
@@ -83,9 +88,10 @@ export class ProductList {
          <p class="product-price">$${product.price}</p>`;
 
       modalFooter.innerHTML =
-         `<button type="button" id="btn-buy" class="btn btn-primary btn-buy" data-id=${product.id}>Buy</button>`;
+         `<button type="button" id="btn-buy" class="btn btn-primary btn-buy" data-id="${product.id}">Buy</button>`;
 
       modalFooter.querySelector('.btn-buy').dataset.id = product.id;
+      this.addEventListeners();
    }
 
    addProductToCart(event) {
@@ -97,4 +103,4 @@ export class ProductList {
 }
 
 
-new ProductList().renderProducts();
+new ProductList();

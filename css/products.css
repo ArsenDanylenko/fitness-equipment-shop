@@ -19,6 +19,18 @@
    }
 }
 
-.product__info .product__img {
+.product__img-container {
+   width: 100%;
+   overflow: hidden;
+}
+.product__img-container .product__img {
    object-fit: cover;
+}
+.product__info {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+.product-description {
+   flex: 1 1 auto;
 }
