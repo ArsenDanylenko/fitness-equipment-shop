@@ -1,3 +1,6 @@
+import { Cart } from './cart.js';
+import { ProductsService } from './products-service.js';
+import { showAlert } from './alert.js';
 
 export class ProductList {
    constructor() {
@@ -25,11 +28,6 @@ export class ProductList {
       return products.find(product => product.id === id);
    }
 
-   async showToConsole() {
-      console.log(getProductById('1'));
-   }
-
-
    async renderProducts() {
       try {
          let productListDomString = '';
@@ -53,17 +51,9 @@ export class ProductList {
                     <p class="product-description">${product.description}</p>
                     <p class="product-price" data-id=${product.id}>$${product.price}</p>
                   <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#product-info-modal" data-id=${product.id}>Info</a>
+                  <a href="#" class="btn btn-primary btn-buy" data-id=${product.id}>Buy</a>
                 </div>
               </article>`;
-   }
-
-   addEventListeners() {
-      document.querySelectorAll('.btn-info').forEach(btn => {
-         btn.addEventListener('click', this.showProductInfo.bind(this));
-      });
-      // document.querySelectorAll('.btn-buy').forEach(btn => {
-      //    btn.addEventListener('click', this.addProductToCart.bind(this));
-      // });
    }
 
    async showProductInfo(event) {
@@ -79,22 +69,26 @@ export class ProductList {
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
 
       modalBody.innerHTML =
-         `<img class="product-image" src="img/${product.image}" alt="${product.description}">
+         `<img class="product-image" src="img/${product.image}" alt="${product.title}">
          <p class="product-description">${product.description}</p>
-         <p class="product-price">${product.price}</p>`;
+         <p class="product-price">$${product.price}</p>`;
 
       modalFooter.innerHTML =
-         `<button type="button" class="btn btn-primary btn-buy">Buy</button>`;
+         `<button type="button" id="btn-buy" class="btn btn-primary btn-buy" data-id=${product.id}>Buy</button>`;
 
       modalFooter.querySelector('.btn-buy').dataset.id = product.id;
    }
 
-   // addProductToCart(event) {
-   //    const id = event.target.dataset.id;
-   //    const cart = new Cart();
-   //    cart.addProduct(id);
-   //    showAlert('Added to cart!');
-   // }
+
+
+   addEventListeners() {
+      document.querySelectorAll('.btn-info').forEach(btn => {
+         btn.addEventListener('click', this.showProductInfo.bind(this));
+      });
+      document.querySelectorAll('.btn-buy').forEach(btn => {
+         btn.addEventListener('click', this.addProductToCart.bind(this));
+      });
+   }
 }
 
 
