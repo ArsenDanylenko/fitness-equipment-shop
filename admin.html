@@ -15,7 +15,7 @@
    <header class="header">
       <nav>
          <div class="header__container container">
-            <a class="header__logo" href="#"><img src="img/logo.svg" alt="Company logo - Knights Equipment"></a>
+            <a class="header__logo" href="./"><img src="img/logo.svg" alt="Company logo - Knights Equipment"></a>
             <button class="header__burger-btn" type="button">
                <span></span>
             </button>
@@ -42,12 +42,12 @@
          aria-labelledby="product-create-modalLabel" aria-hidden="true">
          <div class="modal-dialog">
             <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="product-create-modalLabel">Add New Item</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <form action="#" id="addNewProductForm">
+               <form action="#" id="addNewProductForm">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="product-create-modalLabel">Add New Item</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
                      <div class="mb-3">
                         <label for="newProductImg" class="form-label">Upload Image</label>
                         <input class="form-control" type="file" id="newProductImg">
@@ -71,18 +71,17 @@
                         </label>
                      </div>
                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="isInStock" id="InStock" checked>
-                        <label class="form-check-label" for="InStock">
+                        <input class="form-check-input" type="radio" name="isInStock" id="inStock" checked>
+                        <label class="form-check-label" for="inStock">
                            In stock
                         </label>
                      </div>
-                  </form>
-               </div>
-
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Add This Item</button>
-               </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                     <button type="submit" class="btn btn-primary">Add This Item</button>
+                  </div>
+               </form>
             </div>
          </div>
       </div>
@@ -91,7 +90,7 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
-   <script src="js/admin.js"></script>
+   <script type="module" src="js/admin.js"></script>
 </body>
 
 </html>
