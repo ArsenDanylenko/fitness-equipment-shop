@@ -67,6 +67,30 @@ export class ProductList {
       document.querySelectorAll('.btn-buy').forEach(btn => {
          btn.addEventListener('click', this.addProductToCart.bind(this));
       });
+
+      document.querySelectorAll('.dropdown-item').forEach(btn => {
+         btn.addEventListener('click', this.sortItems.bind(this));
+      })
+   }
+
+   async sortItems(event) {
+      try {
+         const products = await this.getProducts();
+         let productListDomString = ''
+         const sortedProducts = [];
+
+         products.map(product => {
+            if (event.target.id === product.type) {
+               sortedProducts.push(product);
+            }
+         })
+         sortedProducts.forEach(product => {
+            productListDomString += this.createProductDomString(product);
+         });
+         this.container.innerHTML = productListDomString;
+      } catch (error) {
+         console.error('Error sorting items:', error);
+      }
    }
 
    async showProductInfo(event) {

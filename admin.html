@@ -44,55 +44,59 @@
          </div>
       </nav>
    </header>
-   <main>
-      <a href="#" class="btn btn-primary btn-create" data-bs-toggle="modal" data-bs-target="#product-create-modal">Add
-         new item</a>
+   <main class="admin">
+      <div class="admin__container container">
+         <a href="#" class="btn btn-primary btn-create my-3" data-bs-toggle="modal"
+            data-bs-target="#product-create-modal">Add
+            new item</a>
 
 
-      <div class="product-admin modal fade" id="product-create-modal" tabindex="-1"
-         aria-labelledby="product-create-modalLabel" aria-hidden="true">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <form action="#" id="addNewProductForm">
-                  <div class="modal-header">
-                     <h5 class="modal-title" id="product-create-modalLabel">Add New Item</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                     <div class="mb-3">
-                        <label for="newProductImg" class="form-label">Upload Image</label>
-                        <input class="form-control" type="file" id="newProductImg">
+         <div class="product-admin modal fade" id="product-create-modal" tabindex="-1"
+            aria-labelledby="product-create-modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <form action="#" id="addNewProductForm">
+                     <div class="modal-header">
+                        <h5 class="modal-title" id="product-create-modalLabel">Add New Item</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                      </div>
-                     <div class="mb-3">
-                        <label for="newProductTitle" class="form-label">Product title</label>
-                        <input type="text" class="form-control" id="newProductTitle" placeholder="Type the title here">
+                     <div class="modal-body">
+                        <div class="mb-3">
+                           <label for="newProductImg" class="form-label">Upload Image</label>
+                           <input class="form-control" type="file" id="newProductImg">
+                        </div>
+                        <div class="mb-3">
+                           <label for="newProductTitle" class="form-label">Product title</label>
+                           <input type="text" class="form-control" id="newProductTitle"
+                              placeholder="Type the title here">
+                        </div>
+                        <div class="mb-3">
+                           <label for="newProductDescription" class="form-label">Product description</label>
+                           <textarea class="form-control" id="newProductDescription" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                           <label for="newProductPrice" class="form-label">Price</label>
+                           <input type="number" class="form-control" id="newProductPrice">
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input" type="radio" name="isInStock" id="notInStock">
+                           <label class="form-check-label" for="notInStock">
+                              Not in stock
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input" type="radio" name="isInStock" id="inStock" checked>
+                           <label class="form-check-label" for="inStock">
+                              In stock
+                           </label>
+                        </div>
                      </div>
-                     <div class="mb-3">
-                        <label for="newProductDescription" class="form-label">Product description</label>
-                        <textarea class="form-control" id="newProductDescription" rows="3"></textarea>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add This Item</button>
                      </div>
-                     <div class="mb-3">
-                        <label for="newProductPrice" class="form-label">Price</label>
-                        <input type="number" class="form-control" id="newProductPrice">
-                     </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="isInStock" id="notInStock">
-                        <label class="form-check-label" for="notInStock">
-                           Not in stock
-                        </label>
-                     </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="isInStock" id="inStock" checked>
-                        <label class="form-check-label" for="inStock">
-                           In stock
-                        </label>
-                     </div>
-                  </div>
-                  <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                     <button type="submit" class="btn btn-primary">Add This Item</button>
-                  </div>
-               </form>
+                  </form>
+               </div>
             </div>
          </div>
       </div>
