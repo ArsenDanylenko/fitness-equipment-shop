@@ -3,13 +3,14 @@
    --clr-dark: #0d1719;
    --clr-light: #333333;
    --clr-accent: #ea0000;
+   --clr-body: #f8f8f8;
    --ff-uppercase: "Roboto Condensed Header", Helvetica, Arial, sans-serif;
    --ff-lowercase: Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
    font-family: var(--ff-lowercase);
-   background-color: var(--clr-white);
+   background-color: var(--clr-body);
 }
 
 .container {
