@@ -1,12 +1,9 @@
-import { ProductsService } from "./products-service.js";
-
 const form = document.querySelector('#addNewProductForm');
 
 class NewItem {
    static count = 5;
 
    constructor(title, description, price, isInStock) {
-      this.productsService = new ProductsService();
       this.title = title;
       this.description = description;
       this.price = price;
@@ -27,7 +24,14 @@ form.addEventListener('submit', (e) => {
 });
 
 async function addNewItem(newItem) {
-   const products = await newItem.productsService.getProducts();
-   products.push(newItem);
-   JSON.stringify(products);
+   await fetch('../api/products.json', {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newItem)
+   }).then(res => res.json())
+      .then(data => {
+         console.log(data);
+      });
 }
