@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fitness Equipment</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/admin.css">
+   <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+   <header class="header">
+      <nav>
+         <div class="header__container container">
+            <a class="header__logo" href="#"><img src="img/logo.svg" alt="Company logo - Knights Equipment"></a>
+            <button class="header__burger-btn" type="button">
+               <span></span>
+            </button>
+            <ul class="header__menu nav-menu">
+               <a class="nav-menu__item txt-accent" href="admin.html">Admin</a>
+               <a class="nav-menu__item" href="#">Home</a>
+               <a class="nav-menu__item" href="#products">Products</a>
+               <a class="nav-menu__item nav-menu__cart cart" href="#" data-bs-toggle="modal"
+                  data-bs-target="#modal-cart">
+                  <img class="nav-menu__cart-icon" src="img/cart-icon.svg" alt="cart-icon">
+                  <span class="nav-menu__cart-counter badge bg-dark cart-badge">0</span>
+               </a>
+            </ul>
+         </div>
+      </nav>
+   </header>
+   <main>
+      <!-- <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#product-info-modal" data-id=${product.id}>Edit</a> -->
+      <a href="#" class="btn btn-primary btn-create" data-bs-toggle="modal" data-bs-target="#product-create-modal">Add
+         new item</a>
+
+
+      <div class="product-admin modal fade" id="product-create-modal" tabindex="-1"
+         aria-labelledby="product-create-modalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="product-create-modalLabel">Add New Item</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <p>Modal body text goes here.</p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+   <footer></footer>
+</body>
+
+</html>

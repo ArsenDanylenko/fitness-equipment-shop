@@ -53,6 +53,10 @@ body {
    font-family: var(--ff-lowercase);
 }
 
+.txt-accent {
+   color: var(--clr-accent);
+}
+
 .btn-primary {
    --bs-btn-color: #fff;
    --bs-btn-bg: #ea0000;

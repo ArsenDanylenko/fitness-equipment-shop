@@ -8,7 +8,17 @@
 
 .alert-success {
    --bs-alert-color: #ffffff;
-   --bs-alert-bg: #333333;
-   --bs-alert-border-color: #333333;
-   opacity: 0.8;
+   --bs-alert-bg: #bc0000;
+   --bs-alert-border-color: #bc0000;
+   opacity: 1;
+   animation: vanishAlert 2s ease-out;
+}
+
+@keyframes vanishAlert {
+   30% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
 }
