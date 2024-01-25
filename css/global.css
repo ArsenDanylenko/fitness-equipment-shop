@@ -13,7 +13,7 @@ body {
    background-color: var(--clr-body);
 }
 
-.container {
+/* .container {
    max-width: 100%;
    padding-inline: 24px;
    margin-inline: auto;
@@ -41,7 +41,7 @@ body {
    .container {
       max-width: 1230px;
    }
-}
+} */
 
 /* ==== Utility classes */
 
