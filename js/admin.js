@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
    });
 
    async function addNewItem(newItem) {
-      await fetch('../api/products.json', {
+      await fetch('api/products.json', {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
          body: JSON.stringify(newItem)
       }).then(res => res.json())
          .then(data => {
-            console.log(data);
+            console.log(newItem);
          })
          .catch(error => alert(error));
    }

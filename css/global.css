@@ -3,6 +3,7 @@
    --clr-dark: #0d1719;
    --clr-light: #333333;
    --clr-accent: #ea0000;
+   --clr-accent-dark: #bc0000;
    --clr-body: #f8f8f8;
    --ff-uppercase: "Roboto Condensed Header", Helvetica, Arial, sans-serif;
    --ff-lowercase: Roboto, Helvetica, Arial, sans-serif;
@@ -60,4 +61,9 @@ body {
    --bs-btn-disabled-color: #ffffff;
    --bs-btn-disabled-bg: #282828;
    --bs-btn-disabled-border-color: #282828;
+}
+
+.fixed {
+   width: 100%;
+   position: fixed;
 }
