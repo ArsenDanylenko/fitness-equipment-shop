@@ -13,36 +13,6 @@ body {
    background-color: var(--clr-body);
 }
 
-/* .container {
-   max-width: 100%;
-   padding-inline: 24px;
-   margin-inline: auto;
-}
-
-@media (min-width: 576px) {
-   .container {
-      max-width: 510px;
-   }
-}
-
-@media (min-width: 768px) {
-   .container {
-      max-width: 690px;
-   }
-}
-
-@media (min-width: 992px) {
-   .container {
-      max-width: 930px;
-   }
-}
-
-@media (min-width: 1280px) {
-   .container {
-      max-width: 1230px;
-   }
-} */
-
 /* ==== Utility classes */
 
 .ff-upper {

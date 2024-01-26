@@ -82,7 +82,7 @@ export class Cart {
       data.append("cart", JSON.stringify(this.cart));
       data.append("name", form.querySelector("input[name=name]").value);
       data.append("email", form.querySelector("input[name=email]").value);
-      fetch("https://formspree.io/f/mrgjwwro", {
+      fetch("goodwebsite.com", {
          method: "POST",
          headers: {
             'Accept': 'application/json'

@@ -88,6 +88,7 @@ export class ProductList {
             productListDomString += this.createProductDomString(product);
          });
          this.container.innerHTML = productListDomString;
+         this.addEventListeners();
       } catch (error) {
          console.error('Error sorting items:', error);
       }
@@ -125,6 +126,5 @@ export class ProductList {
       showAlert('Added to cart!');
    }
 }
-
 
 new ProductList();
