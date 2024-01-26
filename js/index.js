@@ -3,4 +3,5 @@ document.addEventListener("DOMContentLoaded", () => {
    import('./products-service.js');
    import('./cart.js');
    import('./product-list.js');
+   import('./header.js');
 });
