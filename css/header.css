@@ -199,3 +199,7 @@
    --bs-btn-active-bg: var(--clr-accent-dark);
    --bs-btn-active-border-color: var(--clr-accent-dark);
 }
+
+.hidden {
+   display: none;
+}
