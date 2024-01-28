@@ -9,7 +9,7 @@
    },
    {
       "id": "2",
-      "title": "Rogue Kettlebells",
+      "title": "Rogue Kettlebell 16 kg",
       "image": "ktb-16.avif",
       "description": "Kettlebell 16 kg",
       "price": 87.00,
@@ -17,9 +17,9 @@
    },
    {
       "id": "3",
-      "title": "Rogue Dumbbells",
+      "title": "Rogue Dumbbell 50 lbs",
       "image": "db-50.jpg",
-      "description": "Hexagon Dumbell 50lbs",
+      "description": "Hexagon Dumbell 50 lbs",
       "price": 234.00,
       "type": "dumbbells"
    },
@@ -30,5 +30,45 @@
       "description": "Air Bike",
       "price": 1125.00,
       "type": "cardio"
+   },
+   {
+      "id": "5",
+      "title": "Rogue Dumbbell 35 lbs",
+      "image": "db-35.jpg",
+      "description": "Hexagon Dumbell 35 lbs",
+      "price": 234.00,
+      "type": "dumbbells"
+   },
+   {
+      "id": "6",
+      "title": "Rogue Kettlebell 24 kg",
+      "image": "ktb-24.avif",
+      "description": "Kettlebell 24 kg",
+      "price": 114.00,
+      "type": "kettlebells"
+   },
+   {
+      "id": "7",
+      "title": "Gymnastic steel rings",
+      "image": "rings-steel.avif",
+      "description": "Rogue Rings feature 1.25'14-gauge steel tubing",
+      "price": 145.00,
+      "type": "gymnastic"
+   },
+   {
+      "id": "8",
+      "title": "Rogue Kettlebell 32 kg",
+      "image": "ktb-32.avif",
+      "description": "Kettlebell 32 kg",
+      "price": 147.00,
+      "type": "kettlebells"
+   },
+   {
+      "id": "9",
+      "title": "Gymnastic wood rings",
+      "image": "rings-wood.avif",
+      "description": "Rogue Rings feature 1.25'14-gauge steel tubing",
+      "price": 145.00,
+      "type": "gymnastic"
    }
 ]
